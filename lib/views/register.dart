@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:softweb_task/views/bottom_nav.dart';
-import 'package:softweb_task/views/homepage.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:softweb_task/views/verify_email.dart';
 import 'package:softweb_task/widgets/custom_text_field.dart';
 
 class Register extends StatelessWidget {
@@ -12,7 +12,7 @@ class Register extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.fromLTRB(15, 50.h, 15, 20),
+        padding: EdgeInsets.fromLTRB(24, 50.h, 24, 20),
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
@@ -25,6 +25,7 @@ class Register extends StatelessWidget {
           1
         ], begin: Alignment.bottomLeft, end: Alignment.topRight)),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Row(
@@ -32,8 +33,12 @@ class Register extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.backup_outlined,
-                          color: Color(0xFFB9B9B9)),
+                      GestureDetector(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: const Icon(Iconsax.arrow_left,
+                              color: Color(0xFFB9B9B9))),
                       SizedBox(
                         width: 10.w,
                       ),
@@ -49,9 +54,12 @@ class Register extends StatelessWidget {
                   Text(
                     'Sign in instead',
                     style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color.fromARGB(255, 186, 85, 85),
+                        decorationThickness: 2,
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
-                        color: const Color(0xFFB9B9B9)),
+                        color: const Color.fromARGB(255, 148, 79, 79)),
                   )
                 ],
               ),
@@ -203,7 +211,7 @@ class Register extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() => const BottomNav(),
+                  Get.to(() => const VerifyEmail(),
                       transition: Transition.upToDown);
                 },
                 child: Container(
@@ -228,6 +236,24 @@ class Register extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 35.h,
+              ),
+              const LinearProgressIndicator(
+                value: 0.5,
+                color: Colors.white,
+                backgroundColor: Colors.grey,
+              ),
+              SizedBox(
+                height: 15.h,
+              ),
+              Text(
+                'Account information',
+                style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xFFA4A4A4)),
+              )
             ],
           ),
         ),

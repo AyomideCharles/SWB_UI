@@ -11,7 +11,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.fromLTRB(15, 90.h, 15, 20),
+        padding: EdgeInsets.fromLTRB(24, 90.h, 24, 20),
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
@@ -62,17 +62,7 @@ class Login extends StatelessWidget {
               SizedBox(
                 height: 15.h,
               ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'Enter Email Address',
-                    hintStyle: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xFFA4A4A4)),
-                    border: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Color(0xFF515151)),
-                        borderRadius: BorderRadius.circular(8.r))),
-              ),
+              const CustomTextField(hintText: 'Enter Email address'),
               SizedBox(
                 height: 25.h,
               ),
@@ -91,7 +81,7 @@ class Login extends StatelessWidget {
               ),
               const CustomTextField(
                 obscureText: true,
-                hintText: 'Password',
+                hintText: 'Enter Password',
                 suffixIcon: Icons.remove_red_eye,
                 showSuffixIcon: true,
               ),
@@ -127,8 +117,7 @@ class Login extends StatelessWidget {
                       ], stops: [
                         0.7,
                         1
-                      ], begin: Alignment.topLeft, end: Alignment.bottomRight)
-                      ),
+                      ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
                   child: Text(
                     'Sign in',
                     style: TextStyle(
@@ -152,11 +141,11 @@ class Login extends StatelessWidget {
                         color: const Color(0xFFB9B9B9)),
                   ),
                   Text(
-                    'Create account',
+                    ' Create account',
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
-                        color: const Color(0xFFB9B9B9)),
+                        color: const Color.fromARGB(255, 162, 103, 103)),
                   )
                 ],
               )

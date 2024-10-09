@@ -25,10 +25,22 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF141414),
-      floatingActionButton: FloatingActionButton(
-        shape: const CircleBorder(),
-        onPressed: () {},
-        child: Image.asset('assets/icons/chat.png'),
+      floatingActionButton: Container(
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(colors: [
+            Color(0xFFEF5858),
+            Color(0xFFEFA058),
+          ], stops: [
+            0.5,
+            0.8
+          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+        ),
+        child: FloatingActionButton(
+          backgroundColor: Colors.transparent,
+          onPressed: () {},
+          child: Image.asset('assets/icons/chat.png'),
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -151,7 +163,7 @@ class _HomepageState extends State<Homepage> {
                                       Text(
                                         'N341.20',
                                         style: TextStyle(
-                                            color: const Color(0xFF282828),
+                                            color: const Color(0xFFEFA058),
                                             fontSize: 10.sp,
                                             fontWeight: FontWeight.w700),
                                       )
@@ -207,6 +219,9 @@ class _HomepageState extends State<Homepage> {
                                   Text(
                                     'Deposit Fee: N20',
                                     style: TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        decorationColor: Colors.white,
+                                        decorationThickness: 2,
                                         color: const Color(0xFFFFFFFF),
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w400),

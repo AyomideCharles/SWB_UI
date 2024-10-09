@@ -23,6 +23,8 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       keyboardType: inputType,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color(0xFF292929),
         hintText: hintText,
         hintStyle: TextStyle(
           fontSize: 16.sp,
