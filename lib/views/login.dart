@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:softweb_task/views/register.dart';
 import 'package:softweb_task/widgets/custom_text_field.dart';
+import 'package:softweb_task/widgets/gradient_text.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -11,17 +12,16 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.fromLTRB(24, 90.h, 24, 20),
+        padding: EdgeInsets.fromLTRB(24, 80.h, 24, 20),
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
           Color(0xFF141414),
-          // Color.fromARGB(255, 172, 130, 91),
-          Color(0xFFEF5858)
+          Color.fromARGB(255, 244, 202, 164)
         ], stops: [
-          0.85,
-          1
+          0.90,
+          1,
         ], begin: Alignment.bottomLeft, end: Alignment.topRight)),
         child: SingleChildScrollView(
           child: Column(
@@ -47,7 +47,7 @@ class Login extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 40.h,
+                height: 60.h,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -140,13 +140,21 @@ class Login extends StatelessWidget {
                         fontSize: 14.sp,
                         color: const Color(0xFFB9B9B9)),
                   ),
-                  Text(
-                    ' Create account',
+                  GradientText(
+                    text: ' Create account',
                     style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
-                        color: const Color.fromARGB(255, 162, 103, 103)),
-                  )
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                    ),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFFEFA058),
+                        Color(0xFFEF5858),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ],
               )
             ],

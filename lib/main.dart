@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: ThemeData(
             fontFamily: 'AeonikTRIAL',
-            // scaffoldBackgroundColor: Colors.black,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
             useMaterial3: true,
           ),

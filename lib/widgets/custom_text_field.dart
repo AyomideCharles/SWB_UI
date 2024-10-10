@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
   final bool showSuffixIcon;
   final TextInputType inputType;
   final IconData? suffixIcon;
+  final double borderWidth;
 
   const CustomTextField({
     super.key,
@@ -15,6 +16,7 @@ class CustomTextField extends StatelessWidget {
     this.showSuffixIcon = false,
     this.suffixIcon,
     this.inputType = TextInputType.text,
+    this.borderWidth = 1.0,
   });
 
   @override
@@ -22,6 +24,7 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       obscureText: obscureText,
       keyboardType: inputType,
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color(0xFF292929),
@@ -32,7 +35,20 @@ class CustomTextField extends StatelessWidget {
           color: const Color(0xFFA4A4A4),
         ),
         border: OutlineInputBorder(
-          borderSide: const BorderSide(color: Color(0xFF515151)),
+          borderSide:
+              BorderSide(color: const Color(0xFF515151), width: borderWidth),
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+              color: const Color(0xFF515151),
+              width: borderWidth), // For focused state
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+              color: const Color(0xFF515151),
+              width: borderWidth), // For enabled state
           borderRadius: BorderRadius.circular(8.r),
         ),
         suffixIcon: showSuffixIcon

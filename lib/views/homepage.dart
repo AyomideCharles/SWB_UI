@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:softweb_task/widgets/gradient_text.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -44,6 +45,7 @@ class _HomepageState extends State<Homepage> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -141,13 +143,10 @@ class _HomepageState extends State<Homepage> {
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(8),
-
                                   decoration: BoxDecoration(
-                                      color: Colors.pink.shade100,
+                                      color: Colors.pink.shade50,
                                       borderRadius:
                                           BorderRadius.circular(20.r)),
-                                  // width: 101,
-                                  // height: 20.h,
                                   child: Row(
                                     children: [
                                       Text(
@@ -160,17 +159,30 @@ class _HomepageState extends State<Homepage> {
                                       SizedBox(
                                         width: 5.w,
                                       ),
-                                      Text(
-                                        'N341.20',
+                                      GradientText(
+                                        text: 'N341.20',
                                         style: TextStyle(
                                             color: const Color(0xFFEFA058),
                                             fontSize: 10.sp,
                                             fontWeight: FontWeight.w700),
-                                      )
+                                        gradient: const LinearGradient(
+                                          colors: [
+                                            Color(0xFFEFA058),
+                                            Color(0xFFEF5858),
+                                          ],
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 )
                               ],
+                            ),
+                            Container(
+                              height: 80,
+                              width: 1.5,
+                              color: const Color(0xFFD04E4E),
                             ),
                             Container(
                               padding: EdgeInsets.symmetric(
@@ -329,6 +341,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                     GridView.builder(
                         padding: EdgeInsets.zero,
+                        primary: false,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 4),

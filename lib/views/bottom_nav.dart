@@ -14,9 +14,6 @@ class _BottomNavState extends State<BottomNav> {
 
   List<Widget> pages = [
     const Homepage(),
-    // const Bills(),
-    // const Loan(),
-    // const Profile(),
   ];
 
   @override

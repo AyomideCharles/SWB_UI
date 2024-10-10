@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:softweb_task/views/verify_email.dart';
 import 'package:softweb_task/widgets/custom_text_field.dart';
+import 'package:softweb_task/widgets/gradient_text.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -18,11 +18,10 @@ class Register extends StatelessWidget {
         decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
           Color(0xFF141414),
-          // Color.fromARGB(255, 172, 130, 91),
-          Color(0xFFEF5858)
+          Color.fromARGB(255, 244, 202, 164)
         ], stops: [
-          0.85,
-          1
+          0.90,
+          1,
         ], begin: Alignment.bottomLeft, end: Alignment.topRight)),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -37,7 +36,7 @@ class Register extends StatelessWidget {
                           onTap: () {
                             Get.back();
                           },
-                          child: const Icon(Iconsax.arrow_left,
+                          child: const Icon(Icons.navigate_before,
                               color: Color(0xFFB9B9B9))),
                       SizedBox(
                         width: 10.w,
@@ -51,16 +50,24 @@ class Register extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(
-                    'Sign in instead',
+                  GradientText(
+                    text: 'Sign in instead',
                     style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        decorationColor: const Color.fromARGB(255, 186, 85, 85),
-                        decorationThickness: 2,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
-                        color: const Color.fromARGB(255, 148, 79, 79)),
-                  )
+                      decoration: TextDecoration.underline,
+                      decorationColor: const Color.fromARGB(184, 219, 139, 139),
+                      decorationThickness: 2,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                    ),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFFEFA058),
+                        Color(0xFFEF5858),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
@@ -126,7 +133,7 @@ class Register extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15.h,
+                height: 20.h,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -146,7 +153,7 @@ class Register extends StatelessWidget {
                 inputType: TextInputType.number,
               ),
               SizedBox(
-                height: 15.h,
+                height: 20.h,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -165,7 +172,7 @@ class Register extends StatelessWidget {
                 hintText: 'Enter Email address',
               ),
               SizedBox(
-                height: 15.h,
+                height: 20.h,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -186,7 +193,7 @@ class Register extends StatelessWidget {
                 showSuffixIcon: true,
               ),
               SizedBox(
-                height: 15.h,
+                height: 20.h,
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -203,8 +210,6 @@ class Register extends StatelessWidget {
               ),
               const CustomTextField(
                 hintText: 'Enter Referral Code',
-                suffixIcon: Icons.remove_red_eye,
-                showSuffixIcon: true,
               ),
               SizedBox(
                 height: 30.h,
@@ -237,12 +242,29 @@ class Register extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 35.h,
+                height: 30.h,
               ),
-              const LinearProgressIndicator(
-                value: 0.5,
-                color: Colors.white,
-                backgroundColor: Colors.grey,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 160,
+                    height: 2,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.r)),
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Container(
+                    width: 160,
+                    height: 2,
+                    decoration: BoxDecoration(
+                        color: const Color(0xFF373737),
+                        borderRadius: BorderRadius.circular(8.r)),
+                  )
+                ],
               ),
               SizedBox(
                 height: 15.h,
