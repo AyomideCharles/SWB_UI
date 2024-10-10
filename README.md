@@ -1,16 +1,14 @@
 # softweb_task
+ 
 
-A new Flutter project.
 
-## Getting Started
+# Screenshot
+<img src="https://github.com/user-attachments/assets/867e6104-a19e-4962-aa95-09a5249fd710" width="300">
+<img src="https://github.com/user-attachments/assets/7e31067b-6aa0-43af-8e03-d52a40fb3efe" width="300">
+<img src="https://github.com/user-attachments/assets/cf5ca997-7563-44cb-af67-e114c81852cb" width="300">
+<img src="https://github.com/user-attachments/assets/dfefb17f-001a-48dc-ace5-3ec664933ee8" width="300">
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#Figma Link
+https://www.figma.com/design/4gtVHZeSRtFZRmq0htoVWT/SWD-Mobile-App-Test?node-id=3-93&node-type=frame&t=GEnMCHInTdUv3VKi-0
